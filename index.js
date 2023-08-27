@@ -4,7 +4,7 @@ export default ( paths = [], source = "riot:components" ) => {
   const camelize = ( str ) =>
     str.toLowerCase().replace( /[-_\s.]+(.)?/g, ( _, c ) => c.toUpperCase() )
   return {
-    name: 'rollup_riot_register',
+    name: 'rollup-plugin-riot-register',
     resolveId: ( id ) => source === id ? id : null,
     load: async ( id ) => {
       if( source !== id )
@@ -22,7 +22,6 @@ export default ( paths = [], source = "riot:components" ) => {
       }
       const code = 'import { register } from \'riot\'\n' + imp.join( '\n' ) +
                    '\n\nexport default () => {' + reg.join( ',' ) + '\n}\n'
-      //console.log( code )
       return code
     }
   }
