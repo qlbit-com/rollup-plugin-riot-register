@@ -2,12 +2,8 @@
   "name": "rollup-plugin-riot-register",
   "version": "1.0.0",
   "description": "Rollup plugin for registering riot.js components",
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
-  "exports": {
-    "import": "./dist/index.mjs",
-    "default": "./dist/index.cjs"
-  },
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,6 +1,6 @@
 import glob from 'fast-glob';
 
-var index = ( paths = [], source = "riot:components" ) => {
+const rollupRiotRegister = ( paths = [], source = "riot:components" ) => {
   const camelize = ( str ) =>
     str.toLowerCase().replace( /[-_\s.]+(.)?/g, ( _, c ) => c.toUpperCase() );
   return {
@@ -27,4 +27,4 @@ var index = ( paths = [], source = "riot:components" ) => {
   }
 };
 
-export { index as default };
+export { rollupRiotRegister as default };
