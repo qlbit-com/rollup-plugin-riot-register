@@ -2,13 +2,15 @@
   "name": "rollup-plugin-riot-register",
   "version": "1.0.0",
   "description": "Rollup plugin for registering riot.js components",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "default": "./dist/index.cjs"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/qlbit-com/rollup-plugin-riot-register.git"
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "rollup",
@@ -16,10 +18,24 @@
     "riot",
     "register"
   ],
-  "author": "Dmitriy Pichugin",
   "license": "MIT",
+  "author": "Dmitriy Pichugin",
+  "homepage": "https://github.com/qlbit-com/rollup-plugin-riot-register#readme",
   "bugs": {
     "url": "https://github.com/qlbit-com/rollup-plugin-riot-register/issues"
   },
-  "homepage": "https://github.com/qlbit-com/rollup-plugin-riot-register#readme"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qlbit-com/rollup-plugin-riot-register.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "fast-glob": "^3.3.1"
+  },
+  "devDependencies": {
+    "rollup": "^3.28.1",
+    "@rollup/plugin-node-resolve": "^15.2.1"
+  }
 }
